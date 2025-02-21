@@ -2,7 +2,7 @@
 
 The goal of this kata is to practice setting up a continuous integration / continuous delivery system.
 
-We start with my solution to the Roman Numerals kata (also known as theh Reverse Roman Numerals kata). We've added on a simple web UI.
+We start with my solution to the Roman Numerals kata (also known as the Reverse Roman Numerals kata). We've added on a simple web UI.
 
 You will take this simple web app and set up a continuous delivery pipeline to run it in "production."
 
@@ -12,12 +12,13 @@ Here are the steps:
 You will need your own Roman Numerals repository. To fork this repository:
 - Visit https://github.com/rkasper/roman-python.
 - Click the `Fork` button.
-- In your GitHub account, visit the forked repository you just created.
+- In your GitHub account, visit the forked repository you just created. Note the URL of _your_ Roman Numerals repository.
 
 ## Clone your Roman Numerals repository
-- In PyCharm Professional, create a new project from VCS.
-  - For `Version Control`, specify `Git`.
-  - For the `URL`, copy-paste the URL of _your_ Roman Numerals repository
+- In PyCharm Professional, create a new project from version control.
+  - Select `File / Project from Version Control...`.
+  - For `Version Control`, select `Git`.
+  - For the `URL`, copy-paste the URL of _your_ Roman Numerals repository.
   - Click the `Clone` button.
 
 ## Make sure the app runs on your machine
@@ -36,10 +37,11 @@ You will need your own Roman Numerals repository. To fork this repository:
     - 🤔 __Are there any other files? What does each file do?__
 
 ## Set up your continuous delivery pipeline
-We'll use [Digital Ocean App Platform](https://www.digitalocean.com/products/app-platform), a super-simple way to set up a continuous delivery pipeline and deploy an application.
-- Login to Digital Ocean, either using your own account or using an account provided by your instructor.
-- In the Digital Ocean UI, create your own Roman Python project.
-  - Navigate to `Projects / New Project`. Name your project `Roman Python` and click `Create Project'.
+We'll use [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform), a super-simple way to set up a continuous delivery pipeline and deploy an application.
+- Login to DigitalOcean, either using your own account or using an account provided by your instructor.
+  - If you create a new account, DigitalOcean will give you $200 in credits for 2 months of use. You'll have to give them a form of payment. Don't worry! You won't get charged, as long as you remember to shut down any services you launch today.
+- In the DigitalOcean UI, create your own Roman Python project.
+  - Navigate to `Projects / New Project`. Name your project `Roman Python` and click `Create Project`.
   - In the `Move Resources` dialog, click `Skip for now`.
 - Create your Roman Python app. Click `Create App`.
   - At the prompt, `Create Resource from Source Code / Service Provider`, select `GitHub`.
@@ -62,7 +64,7 @@ We'll use [Digital Ocean App Platform](https://www.digitalocean.com/products/app
 - Go to `Build Logs` and watch your app build.
 - Your app is now running in a production environment. To run your app's web UI, click the `Live App` button.
 
-## Continous delivery
+## Continuous delivery
 One way we reduce risk is by reducing batch size: our CD pipeline automatically rebuilds and redeploys every time we introduce a code change. Remember that `Autodeploy` setting? We left it turned on. Whenever we push new code to the repository, our CD pipeline will notice, clone the repository, build it, and deploy it.
 - 🤔 __Try it: change some code on your machine, run the tests to make sure everything is "green", and commit and push to git.__
 - 🤔 __What did you change?__
